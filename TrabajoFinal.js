@@ -1,4 +1,4 @@
-//Listado de URLs accedidas por un usuario en concreto, ordenado por fecha y hora de acceso.
+//Listado de URLs accedidas por un usuario en concreto, ordenado por fecha y hora de acceso. Ejemplo usuario 39
 db.trazas.find({id_usuario:39}).sort({ fecha_acceso:1 })
 //Listado de todos los usuarios que han accedido a una URL del gestor.
 //Listado de todos los usuarios que han accedido a la aplicación en un rango de tiempo específico.
