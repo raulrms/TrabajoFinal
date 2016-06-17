@@ -17,6 +17,6 @@ db.accesos.mapReduce(function(){emit(this.url,1)},
 //Listado de usuarios que han accedido a URLs con una sola etiqueta. Además de mostrar el usuario, muestra también el tag asociado.
 //Listado de los tags existentes en la collection y la cantidad de URLs asociadas a ese tag.
 //Listado de usuarios que han accedido a una URL con un tag específico.
-db.accesos.find({ $and: [{url:"http://spotify.com"}, {tags: "ocio" }]}, { _id: 0, id_usuario: 1 })
+db.accesos.find({ $and: [{url:"http://baidu.com"}, {tags: "ocio" }]}, { _id: 0, id_usuario: 1 })
 //Cantidad de URLs asociadas a un tag específico.
 db.accesos.find({tags:"noticias"}).count()
