@@ -14,6 +14,10 @@ db.accesos.mapReduce(function(){emit(this.url,1)},
                         }
 )
 //Listado de todas las URLs con dos o más tags asociados.
+db.accesos.find({
+    $nor: [{ "tags": { $exists: false } },
+        { "tags": { $size: 0 } }]
+},{_id:0,url:1})
 //Listado de usuarios que han accedido a URLs con una sola etiqueta. Además de mostrar el usuario, muestra también el tag asociado.
 //Listado de los tags existentes en la collection y la cantidad de URLs asociadas a ese tag.
 db.accesos.aggregate(
