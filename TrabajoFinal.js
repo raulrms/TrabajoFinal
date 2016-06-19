@@ -18,8 +18,7 @@ db.accesos.find({
     $nor: [{ "tags": { $exists: false } },
         { "tags": { $size: 0 } }]},{_id:0,url:1})
 //Listado de usuarios que han accedido a URLs con una sola etiqueta. Además de mostrar el usuario, muestra también el tag asociado.
-db.accesos.find({"tags": { $size: 1 }},
-    {"id_usuario": 1,"tags": 1,"_id": 0})
+db.accesos.find({"tags": { $size: 1 }},{"id_usuario": 1,"tags": 1,"_id": 0})
 //Listado de los tags existentes en la collection y la cantidad de URLs asociadas a ese tag.
 db.accesos.aggregate(
                        [
