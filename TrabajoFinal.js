@@ -18,7 +18,6 @@ db.accesos.mapReduce(function(){emit(this.url,1)},
 //Listado de los tags existentes en la collection y la cantidad de URLs asociadas a ese tag.
 db.accesos.aggregate(
                        [
-                          { $project: { tags: 1 } },
                           { $unwind: "$tags" },
                           { $group: {
                                       _id: "$tags",
